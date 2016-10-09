@@ -1,0 +1,298 @@
+'.source.js.jsx':
+  'React ES6 Component':
+    'prefix': 'rc'
+    'body': """
+      import React, { Component } from 'react';
+
+      export default class ${1:MyComponent} extends Component {
+        render() {
+          return (${2:<div>MyComponent</div>});
+        }
+      }
+
+    """
+
+  'React ES6 Component with PropTypes':
+    'prefix': 'rcp'
+    'body': """
+      import React, { Component, PropTypes } from 'react';
+
+      export default class ${1:MyComponent} extends Component {
+        static propTypes = {
+          ${2}
+        }
+
+        render() {
+          return (${3:<div>MyComponent</div>});
+        }
+      }
+
+    """
+
+  'React ES6 Component with Constructor':
+    'prefix': 'rcc'
+    'body': """
+      import React, { Component, PropTypes } from 'react';
+
+      export default class ${1:MyComponent} extends Component {
+        constructor(props) {
+          super(props);
+          ${2}
+        }
+
+        render() {
+          return (${3:<div>MyComponent</div>});
+        }
+      }
+
+    """
+
+  'React ES6 Component with PropTypes and Constructor':
+    'prefix': 'rcpc'
+    'body': """
+      import React, { Component, PropTypes } from 'react';
+
+      export default class ${1:MyComponent} extends Component {
+        static propTypes = {
+          ${2}
+        }
+
+        constructor(props) {
+          super(props);
+          ${3}
+        }
+
+        render() {
+          return (${4:<div>MyComponent</div>});
+        }
+      }
+
+    """
+
+  'React ES6 Constructor':
+    'prefix': 'rconst'
+    'body': """
+      constructor(props) {
+        super(props);
+        ${1}
+      }
+
+    """
+  'React ES6 Functional Component':
+    'prefix': 'rfunc'
+    'body': """
+      import React, {PropTypes} from 'react';
+
+      export const ${1} = (props) => {
+        return (${2:<div>MyComponent</div>});
+      }
+
+      ${1}.propTypes = {
+      };
+    """
+  'React ES6 bind method to this':
+    'prefix': 'rbm',
+    'body': """
+      this.${1} = this.${1}.bind(this);
+    """
+  'React ES6 props definition':
+    'prefix': 'rpd',
+    'body': """
+      ${1}.propTypes = {
+        ${2}
+      };
+    """
+
+
+  # PropType string
+  'React PropType string':
+    'prefix': 'rpstr',
+    'body': "${1:myProp}: PropTypes.string,"
+  'React PropType string required':
+    'prefix': 'rpstrr',
+    'body': "${1:myProp}: PropTypes.string.isRequired,"
+
+  # PropType number
+  'React PropType number':
+    'prefix': 'rpn',
+    'body': "${1:myProp}: PropTypes.number,"
+  'React PropType number required':
+    'prefix': 'rpnr',
+    'body': "${1:myProp}: PropTypes.number.isRequired,"
+
+  # PropType object
+  'React PropType object':
+    'prefix': 'rpo',
+    'body': "${1:myProp}: PropTypes.object,"
+  'React PropType object required':
+    'prefix': 'rpor',
+    'body': "${1:myProp}: PropTypes.object.isRequired,"
+
+  # PropType array
+  'React PropType array':
+    'prefix': 'rpa',
+    'body': "${1:myProp}: PropTypes.array,"
+  'React PropType array required':
+    'prefix': 'rpar',
+    'body': "${1:myProp}: PropTypes.array.isRequired,"
+
+  # PropType bool
+  'React PropType bool':
+    'prefix': 'rpb',
+    'body': "${1:myProp}: PropTypes.bool,"
+  'React PropType bool required':
+    'prefix': 'rpbr',
+    'body': "${1:myProp}: PropTypes.bool.isRequired,"
+
+  # PropType element
+  'React PropType element':
+    'prefix': 'rpe',
+    'body': "${1:myProp}: PropTypes.element,"
+  'React PropType element required':
+    'prefix': 'rper',
+    'body': "${1:myProp}: PropTypes.element.isRequired,"
+
+  # PropType function
+  'React PropType function':
+    'prefix': 'rpf',
+    'body': "${1:myProp}: PropTypes.func,"
+  'React PropType function required':
+    'prefix': 'rpfr',
+    'body': "${1:myProp}: PropTypes.func.isRequired,"
+
+  # PropType shape
+  'React PropType shape':
+    'prefix': 'rps',
+    'body': """
+      ${1:myProp}: PropTypes.shape({
+        ${2}
+      }),
+    """
+  'React PropType shape required':
+    'prefix': 'rpsr',
+    'body': """
+      ${1:myProp}: PropTypes.shape({
+        ${2}
+      }).isRequired,
+    """
+# 从react这个package里面拷贝过来的，自己也改了一下
+  "React: componentDidMount() { ... } (ES6)":
+    prefix: "cdm"
+    body: "componentDidMount() {\n\t${1}\n}"
+
+  "React: componentDidUpdate(pp, ps) { ... } (ES6)":
+    prefix: "cdup"
+    body: "componentDidUpdate(prevProps, prevState) {\n\t${1}\n}"
+
+  "React: componentWillMount() { ... } (ES6)":
+    prefix: "cwm"
+    body: "componentWillMount() {\n\t${1}\n}"
+
+  "React: componentWillReceiveProps(np) { ... } (ES6)":
+    prefix: "cwr"
+    body: "componentWillReceiveProps(nextProps) {\n\t${1}\n}"
+
+  "React: componentWillUnmount() { ... } (ES6)":
+    prefix: "cwun"
+    body: "componentWillUnmount() {\n\t${1}\n}"
+
+  "React: componentWillUpdate(np, ns) { ... } (ES6)":
+    prefix: "cwu"
+    body: "componentWillUpdate(nextProps, nextState) {\n\t${1}\n}"
+
+  "React: shouldComponentUpdate(np, ns) { ... } (ES6)":
+    prefix: "scu"
+    body: "shouldComponentUpdate(nextProps, nextState) {\n\t${1}\n}"
+
+  "React: static defaultProps = { ... }":
+    prefix: "sdp"
+    body: "static defaultProps = {\n\t${1}\n};"
+
+  "React: this.state = { ... }":
+    prefix: "is"
+    body: "this.state = {\n\t${1}: ${2}\n}"
+
+  "React: static propTypes = { ... } (ES6)":
+    prefix: "sp"
+    body: "static propTypes = {\n\t${1}: PropTypes.${2:string}\n};"
+
+  "React: render() { return ... } (ES6)":
+    prefix: "ren"
+    body: "render() {\n\treturn (\n\t\t${1:<div />}\n\t);\n}"
+
+  "React: setState({ ... }) (ES6)":
+    prefix: "sst"
+    body: "this.setState({\n\t${1}: ${2}\n});"
+
+  "React: this.props.":
+    prefix: "tp"
+    body: "this.props.${1}"
+
+  "React: this.state.":
+    prefix: "ts"
+    body: "this.state.${1}"
+
+# 自己添加的
+  "immutable fromJS":
+    prefix: "imfim"
+    body: "import { fromJS } from 'immutable';"
+
+  "axios":
+    prefix: "imax"
+    body: "import axios from 'axios';"
+
+  "ActionTypes constants":
+    prefix: "imacc"
+    body: "import * as ActionTypes from '../constants/constants';"
+
+  "dispatch":
+    prefix: "dis"
+    body: """
+      dispatch({
+        type: ActionTypes.${1},
+        data: ${2},
+      });
+    """
+
+  "function arrow":
+    prefix: "funa"
+    body: """
+      (${1}) => {
+        ${2}
+      }
+    """
+
+  "return dispatch":
+    prefix: "red"
+    body: """
+      return (dispatch) => {
+        dispatch({
+          type: ActionTypes.${1},
+          data: ${2},
+        });
+      }
+    """
+
+  "axios get":
+    prefix: "axg"
+    body: """
+      axios.get('${1}')
+        .then((${2}) => {
+          ${3}
+        })
+        .catch(() => {
+
+        });
+    """
+
+  "axios post":
+    prefix: "axp"
+    body: """
+      axios.post('${1}', ${2:params})
+        .then((${3}) => {
+          ${4}
+        })
+        .catch(() => {
+
+        });
+    """
