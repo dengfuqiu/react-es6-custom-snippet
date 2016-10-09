@@ -32,7 +32,7 @@
   'React ES6 Component with Constructor':
     'prefix': 'rcc'
     'body': """
-      import React, { Component, PropTypes } from 'react';
+      import React, { Component } from 'react';
 
       export default class ${1:MyComponent} extends Component {
         constructor(props) {
